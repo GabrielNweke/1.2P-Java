@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .result {
+      margin: 10px 0;
+      padding: 5px;
+      border: 1px solid #ccc;
+      background-color: #f2f2f2;
+    }
+  </style>
+  <script>
+    function demonstrateStringMethods() {
+      let str = 'Hello, World!';
+      let length = str.length;
+      let uppercase = str.toUpperCase();
+      let indexOfWorld = str.indexOf('World');
+      let substring = str.substring(0, 5);
+      let replaced = str.replace('Hello', 'Hi');
+
+      document.getElementById('stringResult').innerHTML = `
+        String Length: ${length}<br>
+        Uppercase: ${uppercase}<br>
+        Index of 'World': ${indexOfWorld}<br>
+        Substring: ${substring}<br>
+        Replaced: ${replaced}
+      `;
+    }
+
+    function demonstrateNumberMethods() {
+      let num = 123.456;
+      let fixed = num.toFixed(2);
+      let exponential = num.toExponential();
+      let stringConversion = num.toString();
+      let isNan = Number.isNaN(num);
+      let isInteger = Number.isInteger(num);
+
+      document.getElementById('numberResult').innerHTML = `
+        Fixed: ${fixed}<br>
+        Exponential: ${exponential}<br>
+        String Conversion: ${stringConversion}<br>
+        Is NaN: ${isNan}<br>
+        Is Integer: ${isInteger}
+      `;
+    }
+
+    function demonstrateArrayMethods() {
+      let mixedArray = ['apple', 3, 'banana', 7, 'cherry'];
+      let length = mixedArray.length;
+      let joined = mixedArray.join(', ');
+      let indexOfBanana = mixedArray.indexOf('banana');
+      let concatenated = mixedArray.concat(['date', 9]);
+      let sliced = mixedArray.slice(2, 5);
+
+      document.getElementById('arrayResult').innerHTML = `
+        Array Length: ${length}<br>
+        Joined: ${joined}<br>
+        Index of 'banana': ${indexOfBanana}<br>
+        Concatenated: ${concatenated}<br>
+        Sliced: ${sliced}
+      `;
+    }
+
+    function demonstrateDateMethods() {
+      let currentDate = new Date();
+      let year = currentDate.getFullYear();
+      let month = currentDate.getMonth();
+      let date = currentDate.getDate();
+      let hours = currentDate.getHours();
+      let minutes = currentDate.getMinutes();
+
+      document.getElementById('dateResult').innerHTML = `
+        Year: ${year}<br>
+        Month: ${month}<br>
+        Date: ${date}<br>
+        Hours: ${hours}<br>
+        Minutes: ${minutes}
+      `;
+    }
+
+    function demonstrateFunctionMethods() {
+      function add(a, b) {
+        return a + b;
+      }
+
+      let sum = add(2, 3);
+      let applySum = add.apply(null, [2, 3]);
+
+      document.getElementById('functionResult').innerHTML = `
+        Function Result: ${sum}<br>
+        Function Apply Result: ${applySum}
+      `;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="demonstrateStringMethods()">String Methods</button>
+  <div id="stringResult" class="result"></div>
+
+  <button onclick="demonstrateNumberMethods()">Number Methods</button>
+  <div id="numberResult" class="result"></div>
+
+  <button onclick="demonstrateArrayMethods()">Array Methods</button>
+  <div id="arrayResult" class="result"></div>
+
+  <button onclick="demonstrateDateMethods()">Date Methods</button>
+  <div id="dateResult" class="result"></div>
+
+  <button onclick="demonstrateFunctionMethods()">Function Methods</button>
+  <div id="functionResult" class="result"></div>
+</body>
+</html>
